@@ -7,12 +7,12 @@ const getRandom = (min, max) => {
 exports.getCDA = async (req, res) => {
     const points = {
         firstPoint: {
-            x: getRandom(0, 10),
-            y: getRandom(0, 10)
+            x: getRandom(0, 20),
+            y: getRandom(0, 20)
         },
         secondPoint: {
-            x: getRandom(15, 25),
-            y: getRandom(15, 25)
+            x: getRandom(0, 20),
+            y: getRandom(0, 20)
         }
     }
     const coordinates =
@@ -48,8 +48,8 @@ exports.getVy = async (req, res) => {
             y: getRandom(0, 10)
         },
         secondPoint: {
-            x: getRandom(15, 25),
-            y: getRandom(15, 25)
+            x: getRandom(24, 30),
+            y: getRandom(24, 30)
         }
     }
     const coordinates =
