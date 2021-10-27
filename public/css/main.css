@@ -10,9 +10,8 @@ body, h1, h2, h3, p {
 
 main {
     background: #F4F7FA 0 0 no-repeat padding-box;
-    padding-top: 100px;
-    height: 100vh;
     box-sizing: border-box;
+    padding-top: 20px;
 }
 
 button {
@@ -119,6 +118,13 @@ section.rates .graph_buttons button:hover {
     transition-duration: 200ms;
 }
 
+section.rates .graph_buttons #debug.active {
+    background: #2289FF 0% 0% no-repeat padding-box;
+    color: #FFFFFF;
+    transition-property: color, background;
+    transition-duration: 200ms;
+}
+
 footer {
     background: #14395B 0 0 no-repeat padding-box;
 }
@@ -189,4 +195,51 @@ section.copyright_section div {
 section.copyright_section div span {
     font: normal normal normal 14px/20px "Noto Sans KR";
     color: #FFFFFF;
+}
+
+.frame {
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.project {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(30,1fr);
+    grid-template-columns: repeat(30,1fr);
+}
+
+.innactive {
+    height: 100%;
+    width: 100%;
+    background: #DE4738;
+    box-shadow: 0px 0px 0px 1px #ffffff0c inset;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.innactive:hover {
+    background: #EC5142;
+}
+
+.active {
+    background-color: #fff;
+    box-shadow: 0px 0px 0px 0px #0000 inset;
+    transition: all 0.15s;
+}
+
+.active:hover {
+    background-color: #ffffffd5;
 }

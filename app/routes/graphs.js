@@ -18,5 +18,15 @@ module.exports = app => {
         graphs.getVy
     );
 
+    router.post(
+        '/circle',
+        graphs.getCircle
+    );
+
+    router.post(
+        '/ellipse',
+        graphs.getEllipse
+    );
+
     app.use('/api/graphs', router)
 };
