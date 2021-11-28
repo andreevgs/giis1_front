@@ -28,5 +28,30 @@ module.exports = app => {
         graphs.getEllipse
     );
 
+    router.post(
+        '/hypf',
+        graphs.getHypf
+    );
+
+    router.post(
+        '/hyps',
+        graphs.getHyps
+    );
+
+    router.post(
+        '/ermit',
+        graphs.getErmit
+    );
+
+    router.post(
+        '/bezie',
+        graphs.getBezie
+    );
+
+    router.post(
+        '/spline',
+        graphs.getSpline
+    );
+
     app.use('/api/graphs', router)
 };

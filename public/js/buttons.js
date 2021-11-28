@@ -63,8 +63,6 @@ $('body').on('click', '#hypf', (e) => {
     const body = {
         a: $('#a').val(),
         b: $('#b').val(),
-        start: $('#start').val(),
-        end: $('#end').val(),
     }
     getGraphs('http://localhost:3001/api/graphs/hypf', '', body);
 });
@@ -72,9 +70,6 @@ $('body').on('click', '#hypf', (e) => {
 $('body').on('click', '#hyps', (e) => {
     const body = {
         a: $('#a').val(),
-        b: $('#b').val(),
-        start: $('#start').val(),
-        end: $('#end').val(),
     }
     getGraphs('http://localhost:3001/api/graphs/hyps', '', body);
 });
@@ -86,6 +81,48 @@ $('body').on('click', '#hypt', (e) => {
         end: $('#end').val(),
     }
     getGraphs('http://localhost:3001/api/graphs/hypt', '', body);
+});
+
+$('body').on('click', '#ermit', (e) => {
+    const body = {
+        point_1_x: $('#point_1_x').val(),
+        point_1_y: $('#point_1_y').val(),
+        point_2_x: $('#point_2_x').val(),
+        point_2_y: $('#point_2_y').val(),
+        point_3_x: $('#point_3_x').val(),
+        point_3_y: $('#point_3_y').val(),
+        point_4_x: $('#point_4_x').val(),
+        point_4_y: $('#point_4_y').val(),
+    }
+    getGraphs('http://localhost:3001/api/graphs/ermit', '', body);
+});
+
+$('body').on('click', '#bezie', (e) => {
+    const body = {
+        point_1_x: $('#point_1_x').val(),
+        point_1_y: $('#point_1_y').val(),
+        point_2_x: $('#point_2_x').val(),
+        point_2_y: $('#point_2_y').val(),
+        point_3_x: $('#point_3_x').val(),
+        point_3_y: $('#point_3_y').val(),
+        point_4_x: $('#point_4_x').val(),
+        point_4_y: $('#point_4_y').val(),
+    }
+    getGraphs('http://localhost:3001/api/graphs/bezie', '', body);
+});
+
+$('body').on('click', '#spline', (e) => {
+    const body = {
+        point_1_x: $('#point_1_x').val(),
+        point_1_y: $('#point_1_y').val(),
+        point_2_x: $('#point_2_x').val(),
+        point_2_y: $('#point_2_y').val(),
+        point_3_x: $('#point_3_x').val(),
+        point_3_y: $('#point_3_y').val(),
+        point_4_x: $('#point_4_x').val(),
+        point_4_y: $('#point_4_y').val(),
+    }
+    getGraphs('http://localhost:3001/api/graphs/spline', '', body);
 });
 
 $('body').on('click', '#debug', (e) => {

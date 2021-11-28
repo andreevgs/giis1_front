@@ -25,23 +25,13 @@ const drawChart = (coordinates, type, points) => {
     console.log(coordinates);
     for (coordinate of coordinates){
         const opacity = coordinate.c ? 1 - coordinate.c : 1;
-        console.log({ number: Math.round(coordinate.x) * Math.round(coordinate.y), opacity });
         alienDraw.push({ number: Math.round(coordinate.x) + (Math.round(coordinate.y)-1) * 30, opacity});
     }
 
-    // for (let i = 0; i < alienDraw.length; i++) {
-    //     if (alienDraw[i].opacity !== 1) {
-    //         allCubes[alienDraw[i].number].setAttribute('style', `opacity: ${alienDraw[i].opacity}`);
-    //     }
-    //     else {
-    //         allCubes[alienDraw[i].number].classList.add(`active`);
-    //     }
-    // }
-
     let j = 0, howManyTimes = alienDraw.length, timeout = debugMode ? 300 : 0;
     const f = () => {
-        console.log('current point: ', alienDraw[j]);
-        if(alienDraw[j].number > 0) {
+        if(alienDraw[j].number > 0 && alienDraw[j].number < 900) {
+            console.log('current point: ', alienDraw[j]);
             if (alienDraw[j].opacity !== 1) {
                 allCubes[alienDraw[j].number].setAttribute('style', `opacity: ${alienDraw[j].opacity}`);
             } else {

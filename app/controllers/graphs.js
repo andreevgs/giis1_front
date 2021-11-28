@@ -1,9 +1,5 @@
 const axios = require('axios');
 
-const getRandom = (min, max) => {
-    return Math.random() * (max - min) + min;
-};
-
 exports.getCDA = async (req, res) => {
     const points = req.body;
     const coordinates =
@@ -55,6 +51,56 @@ exports.getEllipse = async (req, res) => {
     const coordinates =
         await axios.get(
             `http://localhost:3000/curv/ellipse?a=${points.a}&b=${points.b}&Xc=${points.Xc}&Yc=${points.Yc}`
+        );
+    console.log(points);
+    res.json({ points: points, coordinates: coordinates.data });
+};
+
+exports.getHypf = async (req, res) => {
+    const points = req.body;
+    const coordinates =
+        await axios.get(
+            `http://localhost:3000/curv/hyp/first?a=${points.a}&b=${points.b}`
+        );
+    console.log(points);
+    res.json({ points: points, coordinates: coordinates.data });
+};
+
+exports.getHyps = async (req, res) => {
+    const points = req.body;
+    const coordinates =
+        await axios.get(
+            `http://localhost:3000/curv/hyp/second?a=${points.a}`
+        );
+    console.log(points);
+    res.json({ points: points, coordinates: coordinates.data });
+};
+
+exports.getErmit = async (req, res) => {
+    const points = req.body;
+    const coordinates =
+        await axios.get(
+            `http://localhost:3000/curv/ermit?points=[{"x":"${points.point_1_x}","y":"${points.point_1_y}"}, {"x":"${points.point_2_x}","y":"${points.point_2_y}"}, {"x":"${points.point_3_x}","y":"${points.point_3_y}"}, {"x":"${points.point_4_x}","y":"${points.point_4_y}"}]`
+        );
+    console.log(points);
+    res.json({ points: points, coordinates: coordinates.data });
+};
+
+exports.getBezie = async (req, res) => {
+    const points = req.body;
+    const coordinates =
+        await axios.get(
+            `http://localhost:3000/curv/bezie?points=[{"x":"${points.point_1_x}","y":"${points.point_1_y}"}, {"x":"${points.point_2_x}","y":"${points.point_2_y}"}, {"x":"${points.point_3_x}","y":"${points.point_3_y}"}, {"x":"${points.point_4_x}","y":"${points.point_4_y}"}]`
+        );
+    console.log(points);
+    res.json({ points: points, coordinates: coordinates.data });
+};
+
+exports.getSpline = async (req, res) => {
+    const points = req.body;
+    const coordinates =
+        await axios.get(
+            `http://localhost:3000/curv/spline?points=[{"x":"${points.point_1_x}","y":"${points.point_1_y}"}, {"x":"${points.point_2_x}","y":"${points.point_2_y}"}, {"x":"${points.point_3_x}","y":"${points.point_3_y}"}, {"x":"${points.point_4_x}","y":"${points.point_4_y}"}]`
         );
     console.log(points);
     res.json({ points: points, coordinates: coordinates.data });
